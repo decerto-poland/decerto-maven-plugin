@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>decerto-maven-plugin</artifactId>
+	<name>Decerto Maven Plugin</name>
+	<modules>
+		<module>decerto-liquibase-maven-plugin</module>
+	</modules>
+	<groupId>pl.decerto</groupId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>decerto-releases</id>
+			<name>Releases</name>
+			<url>https://nexus.decerto.pl/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>decerto-snapshots</id>
+			<name>Snapshots</name>
+			<url>https://nexus.decerto.pl/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<url>https://github.com/decerto-poland/decerto-maven-plugin</url>
+		<connection>scm:git:git://github.com/decerto-poland/decerto-maven-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:decerto-poland/decerto-maven-plugin.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<failsOnError>true</failsOnError>
+					<consoleOutput>true</consoleOutput>
+					<configLocation>checkstyle.xml</configLocation>
+					<skip>false</skip>
+					<includes>**/pl/decerto/plugin/`**/*.java,**/*.properties</includes>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
