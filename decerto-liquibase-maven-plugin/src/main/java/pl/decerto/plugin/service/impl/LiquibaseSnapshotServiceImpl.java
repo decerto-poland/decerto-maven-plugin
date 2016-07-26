@@ -1,9 +1,7 @@
 package pl.decerto.plugin.service.impl;
 
 import static pl.decerto.plugin.model.LiquibaseDefaultProperties.DEFAULT_SNAPSHOT_DIR_SIZE;
-import static pl.decerto.plugin.model.LiquibaseDefaultProperties.MASTER_CHANGELOG_FILE;
 import static pl.decerto.plugin.model.LiquibaseDefaultProperties.TEMPLATE_DIR;
-import static pl.decerto.plugin.model.LiquibaseDefaultProperties.TEST_CHANGELOG_FILE;
 import static pl.decerto.plugin.model.LiquibaseDefaultProperties.VERSION_CHANGELOG_FILE;
 import static pl.decerto.plugin.model.LoggerMessages.CHANGELOG_INCLUDE_MSG;
 import static pl.decerto.plugin.model.LoggerMessages.COMMIT_MSG;
@@ -48,8 +46,7 @@ public class LiquibaseSnapshotServiceImpl implements LiquibaseSnapshotService {
 
 	private boolean thereAreChanges() {
 		File snapshotDir = getSnapshotDir();
-		return snapshotDir != null && snapshotDir.listFiles() != null &&
-				getSnapshotDir().listFiles().length > DEFAULT_SNAPSHOT_DIR_SIZE;
+		return snapshotDir.listFiles() != null && getSnapshotDir().listFiles().length > DEFAULT_SNAPSHOT_DIR_SIZE;
 	}
 
 	private void processSnapshotFiles() {
@@ -63,8 +60,9 @@ public class LiquibaseSnapshotServiceImpl implements LiquibaseSnapshotService {
 	}
 
 	private void modifyChangelogFiles() throws IOException {
-		modifyChangelogFile(MASTER_CHANGELOG_FILE);
-		modifyChangelogFile(TEST_CHANGELOG_FILE);
+		for(String changelogFile : mavenProperties.getChangelogFiles()) {
+			modifyChangelogFile(changelogFile);
+		}
 	}
 
 	private void modifyChangelogFile(String changelogFilename) throws IOException {
