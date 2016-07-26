@@ -46,7 +46,7 @@ public class LiquibaseSnapshotServiceImpl implements LiquibaseSnapshotService {
 
 	private boolean thereAreChanges() {
 		File snapshotDir = getSnapshotDir();
-		return snapshotDir.listFiles() != null && getSnapshotDir().listFiles().length > DEFAULT_SNAPSHOT_DIR_SIZE;
+		return snapshotDir.listFiles() != null && snapshotDir.listFiles().length > DEFAULT_SNAPSHOT_DIR_SIZE;
 	}
 
 	private void processSnapshotFiles() {

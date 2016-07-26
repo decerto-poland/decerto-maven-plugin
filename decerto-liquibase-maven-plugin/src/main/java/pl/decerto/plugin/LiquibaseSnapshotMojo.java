@@ -34,7 +34,7 @@ public class LiquibaseSnapshotMojo extends AbstractMojo {
 	private String lineSeparator;
 
 	@Parameter
-	private List<String> changlelogFiles;
+	private List<String> changelogFiles;
 
 	@Override
 	public void execute() throws MojoExecutionException, MojoFailureException {
@@ -51,7 +51,7 @@ public class LiquibaseSnapshotMojo extends AbstractMojo {
 					.projectVersion(projectVersion)
 					.artifactName(artifactName)
 					.lineSeparator(lineSeparator)
-					.changelogFiles(changlelogFiles)
+					.changelogFiles(changelogFiles)
 					.logger(getLog())
 					.build();
 	}
