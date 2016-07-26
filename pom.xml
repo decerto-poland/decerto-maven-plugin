@@ -44,9 +44,9 @@
 				<version>2.5.3</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<preparationGoals>clean install -Dmaven.test.skip=true</preparationGoals>
+					<preparationGoals>clean package install -Dmaven.test.skip=true</preparationGoals>
 					<resume>false</resume>
-					<goals>deploy -Dmaven.test.skip=true</goals>
+					<goals>package deploy -Dmaven.test.skip=true</goals>
 				</configuration>
 			</plugin>
 			<plugin>
