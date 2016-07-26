@@ -32,9 +32,9 @@
 	</distributionManagement>
 
 	<scm>
-		<url>https://github.com/decerto-poland/decerto-maven-plugin</url>
+		<url>https://github.com/decerto-poland/decerto-maven-plugin.git</url>
 		<connection>scm:git:http://github.com/decerto-poland/decerto-maven-plugin.git</connection>
-		<developerConnection>scm:git:http://github.com:decerto-poland/decerto-maven-plugin.git</developerConnection>
+		<developerConnection>scm:git:http://github.com/decerto-poland/decerto-maven-plugin.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
