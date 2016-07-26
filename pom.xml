@@ -8,7 +8,7 @@
 		<module>decerto-liquibase-maven-plugin</module>
 	</modules>
 	<groupId>pl.decerto</groupId>
-	<version>1.1</version>
+	<version>1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -46,7 +46,7 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<preparationGoals>clean package install -Dmaven.test.skip=true</preparationGoals>
 					<resume>false</resume>
-					<goals>package deploy -Dmaven.test.skip=true</goals>
+					<goals>deploy -Dmaven.test.skip=true</goals>
 				</configuration>
 			</plugin>
 			<plugin>
