@@ -1,5 +1,6 @@
 package pl.decerto.plugin;
 
+import java.util.List;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -32,6 +33,9 @@ public class LiquibaseSnapshotMojo extends AbstractMojo {
 	@Parameter(defaultValue = "${line.separator}")
 	private String lineSeparator;
 
+	@Parameter
+	private List<String> changelogFiles;
+
 	@Override
 	public void execute() throws MojoExecutionException, MojoFailureException {
 		MavenProperties mavenProperties = buildMavenProperties();
@@ -47,6 +51,7 @@ public class LiquibaseSnapshotMojo extends AbstractMojo {
 					.projectVersion(projectVersion)
 					.artifactName(artifactName)
 					.lineSeparator(lineSeparator)
+					.changelogFiles(changelogFiles)
 					.logger(getLog())
 					.build();
 	}

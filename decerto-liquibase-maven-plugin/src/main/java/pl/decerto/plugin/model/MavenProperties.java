@@ -1,5 +1,6 @@
 package pl.decerto.plugin.model;
 
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,8 @@ public class MavenProperties {
 	private String artifactName;
 
 	private String lineSeparator;
+
+	private List<String> changelogFiles;
 
 	private Log logger;
 }
