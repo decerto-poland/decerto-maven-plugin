@@ -3,10 +3,6 @@ dist: trusty
 
 language: java
 
-install: ./gradlew assemble
-script:
-  - "./gradlew check"
-
 jdk:
   - oraclejdk8
 
