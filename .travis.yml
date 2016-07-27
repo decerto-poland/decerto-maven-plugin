@@ -11,6 +11,9 @@ addons:
     packages:
       - oracle-java8-installer
 
+after_success:
+  - coveralls
+
 branches:
   only:
       - master
