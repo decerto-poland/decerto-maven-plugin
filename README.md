@@ -9,7 +9,7 @@ This repository contains a set of useful Maven plugins.
 ## Decerto Liquibase Maven Plugin
 This plugin provides following goals:
 
-- <b>move-snapshots</b> (phase <i>none</i>) - enables moving temporary changes from (in default) <i>/resources/liquibase/snapshot</i> directory of the project. Useful during releasing a new version - it creates new folder in <i>/resources/liquibase/</i> with a project's current version name.
+- <b>moveSnapshots</b> (phase <i>none</i>) - enables moving temporary changes from (in default) <i>/resources/liquibase/snapshot</i> directory of the project. Useful during releasing a new version - it creates new folder in <i>/resources/liquibase/</i> with a project's current version name.
 After succesful file processing, it creates proper git commit, which is provided for releasing automation through CI like Jenkins.
 
 <b>Configuration properties:</b>
