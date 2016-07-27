@@ -1,8 +1,7 @@
+sudo: required
+dist: trusty
+
 language: java
 
-sudo: false
-
-script: mvn clean verify
-
-after_success:
-  - coveralls
+jdk:
+  - oraclejdk8
