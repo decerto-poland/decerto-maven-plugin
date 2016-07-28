@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>decerto-maven-plugin</artifactId>
-	<name>Decerto Maven Plugin</name>
 	<modules>
 		<module>decerto-liquibase-maven-plugin</module>
 	</modules>
@@ -15,6 +14,25 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<name>decerto-maven-plugin</name>
+	<description>Decerto Maven Utility Plugins</description>
+	<url>https://github.com/decerto-poland/decerto-maven-plugin</url>
+	<inceptionYear>2016</inceptionYear>
+
+	<developers>
+		<developer>
+			<name>Tomasz Dakowicz</name>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>The MIT License (MIT)</name>
+			<url>http://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -36,6 +54,20 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
