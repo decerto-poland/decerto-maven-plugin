@@ -29,8 +29,8 @@
 
 	<scm>
 		<url>https://github.com/decerto-poland/decerto-maven-plugin.git</url>
-		<connection>scm:git:http://github.com/decerto-poland/decerto-maven-plugin.git</connection>
-		<developerConnection>scm:git:http://github.com/decerto-poland/decerto-maven-plugin.git</developerConnection>
+		<connection>scm:git:git@github.com:decerto-poland/decerto-maven-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:decerto-poland/decerto-maven-plugin.git</developerConnection>
 		<tag>decerto-maven-plugin-1.1</tag>
 	</scm>
 
