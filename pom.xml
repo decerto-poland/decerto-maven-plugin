@@ -17,16 +17,14 @@
 	</properties>
 
 	<distributionManagement>
-		<repository>
-			<id>decerto-releases</id>
-			<name>Releases</name>
-			<url>https://nexus.decerto.pl/content/repositories/releases</url>
-		</repository>
 		<snapshotRepository>
-			<id>decerto-snapshots</id>
-			<name>Snapshots</name>
-			<url>https://nexus.decerto.pl/content/repositories/snapshots</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
 	</distributionManagement>
 
 	<scm>
