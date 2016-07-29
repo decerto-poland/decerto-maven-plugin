@@ -9,4 +9,4 @@ jdk:
 install: mvn install -DskipTests -Dgpg.skip
 
 after_success:
-  - mvn clean verify jacoco:report coveralls:report -DrepoToken=$COVERALLS_TOKEN
+  - mvn clean verify jacoco:report coveralls:report -DrepoToken=$COVERALLS_TOKEN -Dgpg.skip
