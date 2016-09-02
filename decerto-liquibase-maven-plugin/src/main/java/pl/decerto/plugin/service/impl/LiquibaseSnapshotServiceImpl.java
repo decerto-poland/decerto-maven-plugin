@@ -82,7 +82,8 @@ public class LiquibaseSnapshotServiceImpl implements LiquibaseSnapshotService {
 		logger.info(MessageFormat.format(MOVE_DIR_MSG, mavenProperties.getProjectVersion()));
 		File snapshotDir = getSnapshotDir();
 		File projectVersionDir = getProjectVersionDir();
-		FileUtils.moveDirectory(snapshotDir, projectVersionDir);
+		FileUtils.copyDirectory(snapshotDir, projectVersionDir);
+		FileUtils.deleteDirectory(snapshotDir);
 	}
 
 	private void createEmptyChangeLogFile() throws IOException {
