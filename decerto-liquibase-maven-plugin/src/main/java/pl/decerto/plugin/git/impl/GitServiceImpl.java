@@ -35,8 +35,12 @@ public class GitServiceImpl implements GitService {
 	}
 
 	private void addFilesFrom(File commitDir) throws GitAPIException {
-		AddCommand git = new Git(repo).add();
-		git.addFilepattern(getPath(commitDir))
+		AddCommand addNewFiles = new Git(repo).add();
+		addNewFiles.addFilepattern(getPath(commitDir))
+			.call();
+		AddCommand addUpdatedFiles = new Git(repo).add();
+		addUpdatedFiles.addFilepattern(getPath(commitDir))
+			.setUpdate(true)
 			.call();
 	}
 
