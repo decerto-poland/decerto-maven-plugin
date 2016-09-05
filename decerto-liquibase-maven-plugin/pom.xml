@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>decerto-maven-plugin</artifactId>
 		<groupId>pl.decerto</groupId>
-		<version>1.4.5-SNAPSHOT</version>
+		<version>1.4.5</version>
 	</parent>
 	<artifactId>decerto-liquibase-maven-plugin</artifactId>
 	<name>Decerto Liquibase Maven Plugin</name>
