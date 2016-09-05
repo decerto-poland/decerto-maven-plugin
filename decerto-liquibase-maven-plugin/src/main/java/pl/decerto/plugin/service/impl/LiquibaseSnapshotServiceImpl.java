@@ -102,6 +102,7 @@ public class LiquibaseSnapshotServiceImpl implements LiquibaseSnapshotService {
 
 	private void commitChanges() {
 		logger.info(COMMIT_MSG);
+		logger.info(getLiquibaseDir().getAbsolutePath());
 		gitService.commitDirectory(getLiquibaseDir());
 	}
 
