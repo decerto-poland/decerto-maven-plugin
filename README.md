@@ -1,6 +1,5 @@
 # Decerto Maven Plugin
 [![Build Status](https://travis-ci.org/decerto-poland/decerto-maven-plugin.svg?branch=master)](https://travis-ci.org/decerto-poland/decerto-maven-plugin)
-[![Coverage Status](https://coveralls.io/repos/github/decerto-poland/decerto-maven-plugin/badge.svg?branch=master)](https://coveralls.io/github/decerto-poland/decerto-maven-plugin?branch=master)
 
 This repository contains a set of useful Maven plugins.
 
