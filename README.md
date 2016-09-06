@@ -1,5 +1,6 @@
 # Decerto Maven Plugin
 [![Build Status](https://travis-ci.org/decerto-poland/decerto-maven-plugin.svg?branch=master)](https://travis-ci.org/decerto-poland/decerto-maven-plugin)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/pl.decerto/decerto-liquibase-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser)
 
 This repository contains a set of useful Maven plugins.
 
